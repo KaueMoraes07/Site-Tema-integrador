@@ -1,4 +1,4 @@
-import { Terminal, Code2, Wrench } from "lucide-react";
+import { Terminal, Code2, Wrench, TrendingUp, DollarSign, BarChart3 } from "lucide-react";
 
 const languages = [
   { name: "Python", desc: "A mais utilizada — automatização do trabalho." },
@@ -96,6 +96,60 @@ const About = () => (
             ))}
           </ul>
         </article>
+      </div>
+
+      {/* Média salarial e perspectivas */}
+      <div className="mx-auto mt-20 max-w-5xl">
+        <div className="mb-10 text-center">
+          <span className="mb-3 inline-block rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+            Mercado de Trabalho
+          </span>
+          <h3 className="mb-4 text-2xl font-bold md:text-4xl">
+            Média salarial e perspectivas para os próximos anos
+          </h3>
+          <p className="text-muted-foreground">
+            A área de segurança da informação está entre as mais bem pagas no mercado de TI,
+            porém variando muito com a experiência do profissional.
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          <article className="rounded-2xl border border-border bg-gradient-card p-8 shadow-card">
+            <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/15 text-primary">
+              <DollarSign className="h-6 w-6" aria-hidden="true" />
+            </div>
+            <h4 className="mb-2 text-lg font-bold">CAGED (oficial)</h4>
+            <p className="mb-3 text-3xl font-bold text-primary">R$ 8 mil</p>
+            <p className="text-sm text-muted-foreground">
+              Média mensal de um analista de segurança da informação, podendo chegar a
+              aproximadamente <strong className="text-foreground">R$ 14 mil</strong>.
+            </p>
+          </article>
+
+          <article className="rounded-2xl border border-border bg-gradient-card p-8 shadow-card">
+            <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-accent/15 text-accent">
+              <BarChart3 className="h-6 w-6" aria-hidden="true" />
+            </div>
+            <h4 className="mb-2 text-lg font-bold">Glassdoor</h4>
+            <p className="mb-3 text-3xl font-bold text-accent">R$ 4 – 8 mil</p>
+            <p className="text-sm text-muted-foreground">
+              Faixa salarial inicial indicada por plataformas de mercado para profissionais
+              em começo de carreira.
+            </p>
+          </article>
+
+          <article className="rounded-2xl border border-border bg-gradient-card p-8 shadow-card">
+            <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/15 text-primary">
+              <TrendingUp className="h-6 w-6" aria-hidden="true" />
+            </div>
+            <h4 className="mb-2 text-lg font-bold">Perspectivas</h4>
+            <p className="mb-3 text-3xl font-bold text-primary">Alta demanda</p>
+            <p className="text-sm text-muted-foreground">
+              Crescimento contínuo de contratações, com ainda
+              <strong className="text-foreground"> poucos profissionais qualificados</strong> competindo no mercado.
+            </p>
+          </article>
+        </div>
       </div>
     </div>
   </section>

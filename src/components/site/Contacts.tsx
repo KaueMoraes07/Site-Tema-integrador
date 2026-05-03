@@ -1,10 +1,13 @@
 import { Linkedin, Github, Mail } from "lucide-react";
+import kaueImg from "@/assets/member-kaue.jpg";
+import marcosImg from "@/assets/member-marcos.jpg";
+import yuriImg from "@/assets/member-yuri.jpg";
 
 const members = [
-  { name: "Kauê Moraes Archanjo", role: "Pesquisa & Conteúdo", initials: "KM", linkedin: "#", github: "https://github.com/KaueMoraes07", email: "#" },
- { name: "Marcos Vinícius Ribeiro da Silva Santos", role: "Design & UX", initials: "MV", linkedin: "#", github: "#", email: "#" },
- { name: "Yuri Lima", role: "Desenvolvimento", initials: "YL", linkedin: "#", github: "#", email: "#" },
-  { name: "Integrante 4", role: "Apresentação", initials: "I4", linkedin: "#", github: "#", email: "#" },
+  { name: "Kauê Moraes Archanjo", role: "Pesquisa & Conteúdo", initials: "KM", photo: kaueImg, linkedin: "#", github: "https://github.com/KaueMoraes07", email: "#" },
+  { name: "Marcos Vinícius Ribeiro da Silva Santos", role: "Design & UX", initials: "MV", photo: marcosImg, linkedin: "#", github: "#", email: "#" },
+  { name: "Yuri Lima", role: "Desenvolvimento", initials: "YL", photo: yuriImg, linkedin: "#", github: "#", email: "#" },
+  { name: "Integrante 4", role: "Apresentação", initials: "I4", photo: null, linkedin: "#", github: "#", email: "#" },
 ];
 
 const Contacts = () => (
@@ -26,12 +29,20 @@ const Contacts = () => (
             key={m.name}
             className="group flex flex-col items-center rounded-2xl border border-border bg-gradient-card p-6 text-center shadow-card transition-smooth hover:border-primary/50 hover:shadow-elegant"
           >
-            <div
-              className="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-primary text-2xl font-bold text-primary-foreground shadow-glow"
-              aria-hidden="true"
-            >
-              {m.initials}
-            </div>
+            {m.photo ? (
+              <img
+                src={m.photo}
+                alt={`Foto de ${m.name}`}
+                className="mb-4 h-20 w-20 rounded-full object-cover shadow-glow"
+              />
+            ) : (
+              <div
+                className="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-primary text-2xl font-bold text-primary-foreground shadow-glow"
+                aria-hidden="true"
+              >
+                {m.initials}
+              </div>
+            )}
             <h3 className="font-semibold">{m.name}</h3>
             <p className="mb-4 text-sm text-muted-foreground">{m.role}</p>
 
